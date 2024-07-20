@@ -1,5 +1,5 @@
 <?php 
-    include('design/header.php');
+    include('../design/header.php');
  
 ?>
     <!-- start content -->
@@ -21,10 +21,7 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">Password : </label>
                         <input type="password" class="form-control"name="password" id="password">
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <input type="checkbox" id="showPassword"> Show Password
                     </div>
                     <button type="submit" class="btn btn-primary" name="btn_admin">Submit</button>
                 </form>
@@ -34,22 +31,23 @@
      </div>
     <!-- end  content -->
 
-<?php include('design/footer.php'); 
+<?php 
 
 
 if (isset($_POST['btn_admin'])) {
     $fullname = $_POST['fullname'];
     $ad_name = $_POST['username'];
     $ad_password = $_POST['password'];
-    include('config.php');
+    include('../config.php');
     
     $sql = "INSERT INTO admin (full_name, username, password) VALUES ('$fullname', '$ad_name', '$ad_password')";
 
     if (mysqli_query($connection, $sql)) {
-        echo "<p style='margin-left: 20px;'>"."Added successfully"."</p>";
-        header("Location:fd-admin.php");
+        // echo "<p style='margin-left: 20px;'>"."Added successfully"."</p>";
+        header("Location:../fd-admin.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($connection);
     }
 }
+include('../design/footer.php'); 
 ?>
