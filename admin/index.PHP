@@ -1,8 +1,19 @@
-<?php include('design/header.php'); ?>
+<?php include('design/header.php');
+    
+?>
+
     <!-- start content -->
      <div class="content">
         <div class="container">
-            <h1>Admin panel</h1>     
+            <h1>Admin panel</h1> 
+            <?php 
+                        if(isset($_SESSION['login']))
+                        {
+                            // echo $_SESSION['login'];
+                            echo $_SESSION['login'];
+                            unset($_SESSION['login']);
+                        }
+                        ?>   
             <div class="row mt-4">
                  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="cont  p-4 bg-dark text-center text-white m-2">

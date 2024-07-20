@@ -36,7 +36,7 @@
                                     echo '<td>'.$rows['full_name'].'</td>';
                                     echo '<td>'.$rows['username'].'</td>';
                                     echo '<td>'.$rows['password'].'</td>';
-                                    echo "<td><a class='btn btn-danger m-1 delete-btn' href='delete.php?uid=$rows[id]'>delete</a>";
+                                    echo "<td><a class='btn btn-danger m-1 delete-btn' href='admin_crud/delete.php?uid=$rows[id]'>delete</a>";
                                     echo "<a class='btn btn-info' href='admin_crud/update.php?uid=$rows[id]'>update</a></td>";
                                   
                                     echo "</tr>";

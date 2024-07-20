@@ -3,7 +3,7 @@
     <div class="footer " style="position: absolute;width: 100%;top: 100%;text-align: center;">
         <nav class="navbar navbar-expand navbar-dark bg-dark  text-center">
             <div class="container-fluid">
-              <a class="navbar-brand  text-center m-auto" href="#">	coppy write &copy; Mohamed Ewais </a>
+              <a class="navbar-brand  text-center m-auto" href="#">	copy write &copy; Mohamed Ewais </a>
             </div>
           </nav>
      </div>
