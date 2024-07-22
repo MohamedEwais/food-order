@@ -1,4 +1,7 @@
 <?php include('design/header.php');
+    include('config.php');
+    include('auth.php');
+
     
 ?>
 

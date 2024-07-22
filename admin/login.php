@@ -1,9 +1,9 @@
 <?php 
     include('config.php');
-    session_start();
+
     $sql="select * from admin";
     $result=mysqli_query($connection,$sql);
-    define('SITEURL', 'http://localhost/food_Pro/');
+    // define('SITEURL', 'http://localhost/food_Pro/');
  
 ?>
 <!DOCTYPE html>
@@ -31,6 +31,11 @@
                             // echo $_SESSION['login'];
                             echo $_SESSION['login'];
                             unset($_SESSION['login']);
+                        }
+                        if (isset($_SESSION['no-login-msg']))
+                        {
+                            echo $_SESSION['no-login-msg'];
+                            unset($_SESSION['no-login-msg']);
                         }
                         ?>
                    
@@ -78,27 +83,30 @@
     </div>
 
 <?php 
+
         if(isset($_POST['btn_login']))
-        {
+        { 
+            // Get username & password 
             $ad_username=$_POST['username'];
             $ad_password=$_POST['password'];
+            // query statement on DB
             $SQL="select * from admin where username='$ad_username'and password='$ad_password'";
             $res=mysqli_query($connection,$SQL);
 
             $count=mysqli_num_rows($res);
             if($count==1)
             {   
-                // you can access db
-
+                // you have access db
                 $_SESSION['login']="<div style='color:green;'>login successfuly .</div>";
+                $_SESSION['username']=$ad_username;
+                // redir to admin page
                 header('location:'.SITEURL.'admin/');
             }else{
-                // can't access db
+                // can't access db 
                 $_SESSION['login']="<div  style='color:red;'>login faild,username or password .</div>";
                 
                 header('location:'.SITEURL.'admin/login.php');
                 // echo "not inside db";
-
             }
 
         }

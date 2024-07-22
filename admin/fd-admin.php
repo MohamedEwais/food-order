@@ -1,6 +1,7 @@
 <?php 
     include('design/header.php');
     include('config.php');
+    include('auth.php');
     $sql="select * from admin";
     $result=mysqli_query($connection,$sql);
  

@@ -1,4 +1,8 @@
-<?php include('design/header.php'); ?>
+<?php
+ include('design/header.php'); 
+ include('config.php');
+ include('auth.php');
+ ?>
     <!-- start content -->
      <div class="content">
         <div class="container">
