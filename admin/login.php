@@ -3,7 +3,6 @@
 
     $sql="select * from admin";
     $result=mysqli_query($connection,$sql);
-    // define('SITEURL', 'http://localhost/food_Pro/');
  
 ?>
 <!DOCTYPE html>

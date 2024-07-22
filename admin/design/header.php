@@ -19,16 +19,16 @@
                 <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="fd-admin.php">Admin</a>
+                <a class="nav-link" href="http://localhost/food_Pro/admin/fd-admin.php">Admin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="fd-category.php">Category</a>
+                <a class="nav-link" href="http://localhost/food_Pro/admin/fd-category.php">Category</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="fd-food.php">Food</a>
+                <a class="nav-link" href="http://localhost/food_Pro/admin/fd-food.php">Food</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="fd-order.php">Order</a>
+                <a class="nav-link" href="http://localhost/food_Pro/admin/fd-order.php">Order</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
