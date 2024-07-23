@@ -29,7 +29,7 @@
                         <input type="radio" name="feat" value="no">no
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">stastus : </label>
+                        <label  class="form-label">status : </label>
                         <input type="radio" name="active"  value="yes">Yes
                         <input type="radio" name="active"  value="no">no
                     </div>
@@ -47,12 +47,14 @@
     {
         //get title
         $title=$_POST['title'];
+        
         if(isset($_POST['feat']))
         {
             $feat=$_POST['feat'];
         }else{
             $feat="no";
         }
+
         if(isset($_POST['active']))
         {
             $active=$_POST['active'];
@@ -60,6 +62,7 @@
             $active="no";
         }
         
+        // check press the btn ulpload img
         if(isset($_FILES['image']['name']))
         {
             //upload image
@@ -68,12 +71,20 @@
             $img_path=$_FILES['image']['tmp_name'];
             $img_destintion="../../images/category/".$img_name;
 
-            //upload img to serve location
-            $upload=move_uploaded_file($img_path,$img_destintion);
+            // save extension
+            $ex=end(explode(".",$img_name)); 
+            //convert ex to lower
+            $ex_lower=strtolower($ex);
+
+            if($ex_lower=="png"||$ex_lower=="jpg"||$ex_lower=="jpeg"){
+                //upload img to serve location
+                $upload=move_uploaded_file($img_path,$img_destintion);
+
+            }
             //check if not upload image ,redir and add msg error
             if($upload==false)
             {
-                $_SESSION['upload-category']="<div  style='color:red;'>can't upload image category.</div>";
+                $_SESSION['upload-category']="<div  style='color:red;'>can't upload image category. img extension(img,jpg,jpeg)</div>";
                 header('location:'.SITEURL.'admin/category/create.php');
                 die();
             }
