@@ -1,6 +1,6 @@
     <!-- start  footer -->
 
-    <div class="footer " style="position: absolute;width: 100%;top: 100%;text-align: center;">
+    <div class="footer " style="position: relative;width: 100%;bottom: 0%;text-align: center;">
         <nav class="navbar navbar-expand navbar-dark bg-dark  text-center">
             <div class="container-fluid">
               <a class="navbar-brand  text-center m-auto" href="#">	copy write &copy; Mohamed Ewais </a>
@@ -8,7 +8,7 @@
           </nav>
      </div>
     <!-- end  footer -->
-
+  
     <script>
         document.getElementById('showPassword').addEventListener('change', function() {
             const passwordField = document.getElementById('password');
